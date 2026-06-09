@@ -1,0 +1,20 @@
+{
+  "name": "mock-interview-practice",
+  "version": "1.0.0",
+  "description": "Professional mock interview application for UK university pre-CAS interviews",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 5500",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "interview",
+    "mock-interview",
+    "university",
+    "ucas",
+    "video-recording",
+    "pre-cas"
+  ],
+  "author": "Syed Rahman Mustafa",
+  "license": "MIT"
+}

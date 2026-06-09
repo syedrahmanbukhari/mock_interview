@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Interview - UCAS Shield Style</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Start Page -->
+    <div id="startPage" class="page active">
+        <div class="container">
+            <div class="start-content">
+                <div class="branding">
+                    <p class="made-by">Made by</p>
+                    <h1 class="creator-name">Syed Rahman Mustafa</h1>
+                </div>
+                
+                <div class="main-title-section">
+                    <h2 class="main-title">Mock Interview Practice</h2>
+                    <p class="subtitle">Prepare for your university admission interview with confidence</p>
+                </div>
+
+                <button id="startBtn" class="primary-btn start-btn">Start Your Mock Interview</button>
+                
+                <p class="device-recommendation">
+                    <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    For better experience, use laptop or PC
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interview Page -->
+    <div id="interviewPage" class="page">
+        <div class="interview-container">
+            <!-- Prep Phase Layout -->
+            <div id="prepPhase" class="phase active">
+                <!-- Left Side - Timer -->
+                <div class="prep-left">
+                    <div class="timer-circle">
+                        <svg class="timer-svg" viewBox="0 0 120 120">
+                            <circle class="timer-bg" cx="60" cy="60" r="54"></circle>
+                            <circle class="timer-progress" id="prepProgress" cx="60" cy="60" r="54"></circle>
+                        </svg>
+                        <div class="timer-text" id="prepTimer">00:15</div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Question Card -->
+                <div class="prep-right">
+                    <div class="question-card">
+                        <p class="question-meta">Video Response • 1 minute • 1 Take</p>
+                        <h2 class="question-text" id="questionText"></h2>
+                        <button id="startPrepBtn" class="primary-btn">Start</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recording/Submit Phase Layout -->
+            <div id="mainPhase" class="phase">
+                <!-- Left Side - Question -->
+                <div class="left-section">
+                    <div class="question-header">
+                        <p class="question-meta">Video Response • 1 minute • 1 Take</p>
+                        <h2 class="question-text-left" id="questionTextLeft"></h2>
+                    </div>
+                </div>
+
+                <!-- Right Side - Camera and Controls -->
+                <div class="right-section">
+                    <div class="modal-card">
+                        <div class="question-number" id="questionNumber">Question 1 / 17</div>
+                        
+                        <!-- Recording Phase -->
+                        <div id="recordPhase" class="sub-phase active">
+                            <h3 class="phase-title">Click Submit to move to the next question</h3>
+                            <div class="camera-container">
+                                <video id="cameraPreview" autoplay muted playsinline></video>
+                                <div class="recording-indicator">
+                                    <span class="rec-dot"></span>
+                                    <span class="rec-text">REC</span>
+                                </div>
+                                <div class="timer-overlay">
+                                    <div class="timer-text" id="recordTimer">01:00</div>
+                                </div>
+                            </div>
+                            <p class="take-info">Take 1 / 1</p>
+                            <button id="earlySubmitBtn" class="primary-btn">SUBMIT</button>
+                        </div>
+
+                        <!-- Submission Phase -->
+                        <div id="submitPhase" class="sub-phase">
+                            <h3 class="phase-title">Click Submit to move to the next question</h3>
+                            <div class="camera-container submit-preview">
+                                <video id="recordedPreview" controls playsinline></video>
+                            </div>
+                            <p class="take-info">Take 1 / 1</p>
+                            <button id="submitBtn" class="primary-btn">SUBMIT</button>
+                        </div>
+
+                        <!-- Submitted Confirmation -->
+                        <div id="submittedPhase" class="sub-phase">
+                            <div class="submitted-message">
+                                <svg class="checkmark" viewBox="0 0 52 52">
+                                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                                    <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                </svg>
+                                <h3>Your answer is submitted</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Completion Page -->
+    <div id="completionPage" class="page">
+        <div class="container">
+            <div class="completion-content">
+                <h1>Interview Complete!</h1>
+                <p>All 17 questions have been answered and saved.</p>
+                <p class="saved-info" id="savedInfo"></p>
+                <button id="restartBtn" class="primary-btn">Start New Interview</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
